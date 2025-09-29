@@ -1,0 +1,92 @@
+Passo 1: Configurar um Projeto com TypeScript
+Agora que o TypeScript está instalado, vamos configurá-lo em um projeto:
+
+Crie uma pasta para o seu projeto:
+
+mkdir meu-projeto-typescript
+cd meu-projeto-typescript
+
+
+Inicialize um projeto Node.js:
+
+npm init -y
+
+Inicialize um projeto TypeScript:
+
+tsc --init
+
+Este comando cria um arquivo tsconfig.json na raiz do seu projeto. Esse arquivo contém as configurações do compilador TypeScript.
+
+
+Passo 2: Configurar o tsconfig.json
+O arquivo tsconfig.json pode ser configurado de acordo com suas necessidades. Aqui está um exemplo de configuração básica:
+
+
+{
+  "compilerOptions": {
+    "target": "es6",          // Versão do JavaScript para a qual o código será compilado
+    "module": "commonjs",     // Sistema de módulos
+    "strict": true,           // Habilita verificações estritas
+    "esModuleInterop": true,  // Permite interoperabilidade com módulos ES6
+    "forceConsistentCasingInFileNames": true, // Força diferenciação entre maiúsculas e minúsculas
+    "skipLibCheck": true,     // Pula a verificação de tipos em arquivos de biblioteca
+    "outDir": "./dist"        // Pasta de saída para o código compilado
+  },
+  "include": ["src/**/*"],    // Inclui todos os arquivos TypeScript na pasta src
+  "exclude": ["node_modules"] // Exclui a pasta node_modules
+}
+
+
+Sinta-se à vontade para ajustar o tsconfig.json conforme sua necessidade.
+
+Passo 3: Escrever o Primeiro Código TypeScript
+Crie uma pasta src na raiz do projeto:
+
+mkdir src
+
+Dentro da pasta src, crie um arquivo index.ts:
+
+// src/index.ts
+function greet(name: string): string {
+  return `Hello, ${name}!`;
+}
+
+console.log(greet("World"))
+
+
+Passo 4: Compilar o Código TypeScript
+Para compilar o código TypeScript para JavaScript, execute o seguinte comando:
+
+tsc
+
+O comando tsc lerá o arquivo tsconfig.json e compilará todos os arquivos .ts na pasta src para a pasta dist (configurada no tsconfig.json).
+
+
+
+Passo 5: Executar o Código Compilado
+Para executar o código compilado, use o Node.js:
+
+node dist/index.js
+
+Você verá a saída:
+
+Hello, World!
+
+Passo 6: Automatizar o Processo de Compilação
+Para evitar a necessidade de compilar manualmente sempre que você fizer alterações, você pode usar o tsc --watch para monitorar as mudanças e compilar automaticamente:
+
+tsc --watch
+
+Você também pode adicionar um script ao package.json para simplificar o processo. Abra o package.json e adicione os seguintes scripts:
+
+"scripts": {
+  "build": "tsc",
+  "start": "node dist/index.js",
+  "watch": "tsc --watch"
+}
+
+Agora, você pode compilar e executar o projeto usando os seguintes comandos:
+
+Para compilar: npm run build
+Para executar: npm start
+Para compilar em modo de observação: npm run watch
