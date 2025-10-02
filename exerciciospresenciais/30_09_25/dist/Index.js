@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const Pedido_1 = require("./Pedido");
+const Item_1 = require("./Item");
+const pedido = new Pedido_1.Pedido(1);
+const item1 = new Item_1.Item('Mouse', 30.00, 1);
+const item2 = new Item_1.Item('Pilha', 15.00, 2);
+pedido.adicionarItem(item1);
+pedido.adicionarItem(item2);
+pedido.exibirResumoCompra();
