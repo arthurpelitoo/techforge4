@@ -46,6 +46,9 @@ mkdir src
 
 Dentro da pasta src, crie um arquivo index.ts:
 
+para criar arquivos no terminal do windows use 
+type nul > index.ts <exemplo>
+
 // src/index.ts
 function greet(name: string): string {
   return `Hello, ${name}!`;
