@@ -1,8 +1,7 @@
 // import { Texto } from "./Texto";
 // import { Loja } from "./Loja";
 // import { Biblioteca } from "./Biblioteca";
-
-import { BibliotecaGestao } from "./BibliotecaGestao";
+// import { BibliotecaGestao } from "./BibliotecaGestao";
 
 
 
